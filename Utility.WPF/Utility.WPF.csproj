@@ -11,6 +11,7 @@
 		<Description>This package contains a collection of useful WPF methods.</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<LangVersion>latest</LangVersion>
+		<EnableWindowsTargeting>true</EnableWindowsTargeting>
 	</PropertyGroup>
 
   <ItemGroup>
