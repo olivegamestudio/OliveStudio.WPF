@@ -9,16 +9,21 @@ public static class DependencyObjectExtensions
     /// Finds the first parent of a specified type for a given dependency object.
     /// </summary>
     /// <typeparam name="TDependencyType">The type of the parent to find.</typeparam>
-    /// <param name="d">The dependency object to start the search from.</param>
+    /// <param name="dependencyObject">The dependency object to start the search from.</param>
     /// <returns>The first parent of the specified type, or null if no such parent exists.</returns>
-    public static TDependencyType? FindParentOfType<TDependencyType>(this DependencyObject d)
+    public static TDependencyType? FindParentOfType<TDependencyType>(this DependencyObject dependencyObject)
     {
-        if (d is TDependencyType type)
+        if (dependencyObject is null)
+        {
+            return default;
+        }
+
+        if (dependencyObject is TDependencyType type)
         {
             return type;
         }
 
-        return FindParentOfType<TDependencyType>(VisualTreeHelper.GetParent(d));
+        return FindParentOfType<TDependencyType>(VisualTreeHelper.GetParent(dependencyObject));
     }
 
     /// <summary>
