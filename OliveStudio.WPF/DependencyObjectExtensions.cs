@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Media;
 
-namespace Utility;
+namespace OliveStudio;
 
 public static class DependencyObjectExtensions
 {
